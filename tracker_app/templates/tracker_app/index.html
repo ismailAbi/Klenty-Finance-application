@@ -1,0 +1,64 @@
+{% extends 'tracker_app/base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <h2>Accounts</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for account in accounts %}
+      <tr>
+        <td>{{ account.name }}</td>
+        <td>{{ account.balance }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>Budget</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Amount</th>
+        <th>Account</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for budget in budgets %}
+      <tr>
+        <td>{{ budget.amount }}</td>
+        <td>{{ budget.account }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h3>Expenses</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Account</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for expense in expenses %}
+      <tr>
+        <td>{{ expense.name }}</td>
+        <td>{{ expense.amount }}</td>
+        <td>{{ expense.date }}</td>
+        <td>{{ expense.account }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="{% url 'add_account' %}" class="btn btn-primary">Add Account</a>
+  <a href="{% url 'add_expense' %}" class="btn btn-primary">Add Expense</a>
+  <a href="{% url 'add_budget' %}" class="btn btn-primary">Set Budget</a>
+</div>
+{% endblock %}

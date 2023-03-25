@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="{% static 'style.css' %} " />
+    <title>Personal Finance Tracker</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Personal Finance Tracker</h1>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer style="text-align: center; margin: 20px">
+      &copy; 2023 Shaik Ismail | All Rights Reserved
+    </footer>
+  </body>
+</html>
